@@ -30,3 +30,10 @@ class BasePage:
         for char in text:
             self.page.keyboard.insert_text(char)
             self.page.wait_for_timeout(100)
+
+    def safe_assert(self, condition, error_message, screenshot_name):
+        if not condition:
+            screenshot_path = f"{screenshot_name}.png"
+            self.page.screenshot(path=screenshot_path)
+            allure.attach.file(screenshot_path, name=screenshot_name.replace('_', ' ').title(), attachment_type=allure.attachment_type.PNG)
+            raise AssertionError(error_message)
