@@ -6,6 +6,7 @@ from pages.login_page import LoginPage
 from pages.home_page import HomePage
 from pages.cart_page import CartPage
 
+
 @allure.feature("Full User Flow")
 @allure.story("Registration → Login → Product → Cart")
 @pytest.mark.smoke

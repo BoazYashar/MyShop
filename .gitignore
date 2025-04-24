@@ -19,3 +19,5 @@ allure-results/
 
 # Logs
 *.log
+allure-results/ 
+allure-report/ 
