@@ -3,6 +3,7 @@ import allure
 from pages.login_page import LoginPage
 from config.test_config import BROWSER_CONFIG
 
+
 @allure.feature("Authentication")
 @allure.story("Negative Login")
 @pytest.mark.negative

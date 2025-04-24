@@ -30,6 +30,7 @@ MyShop/
 ├── README.md
 ```
 
+
 ## Getting Started
 
 1. Create a virtual environment:
