@@ -1,6 +1,7 @@
 import allure
 from pages.base_page import BasePage
 from playwright.sync_api import expect
+from config.test_config import BROWSER_CONFIG
 
 
 class RegistrationPage(BasePage):
@@ -11,7 +12,8 @@ class RegistrationPage(BasePage):
     def create_account(self, email):
         self.wait_and_fill("#email_create", email)
         self.click_element("#SubmitCreate")
-        expect(self.page.locator("#account-creation_form")).to_be_visible(timeout=10000)
+        expect(self.page.locator("#account-creation_form")).to_be_visible(timeout=BROWSER_CONFIG["default_timeout"]
+)
 
     @allure.step("Filling registration form with user data")
     def fill_registration_form(self, user):
